@@ -3,6 +3,7 @@
 import { z } from 'zod';
 import { generatePersonalizedWelcome } from '@/ai/flows/personalized-welcome';
 import { tailorExperience, type TailorExperienceInput } from '@/ai/flows/tailor-experience';
+import { Resend } from 'resend';
 
 
 // --- AI WELCOME ACTION ---
@@ -36,20 +37,24 @@ const contactFormSchema = z.object({
   message: z.string(),
 });
 
-export async function submitContactForm(data: unknown) {
-  const result = contactFormSchema.safeParse(data);
+const resend = new Resend('re_5WYSDcgE_LKVX2QqF4gECNsBBayePSumo');
 
-  if (!result.success) {
-    return { success: false, message: 'Invalid data provided.' };
+export async function submitContactForm({ name, email, message }: { name: string; email: string; message: string }) {
+  try {
+    // For best deliverability, use the default Resend onboarding address for testing.
+    // For production, verify your own domain and use it as the 'from' address.
+    const response = await resend.emails.send({
+      from: 'Portfolio Contact <onboarding@resend.dev>',
+      to: 'harshkr5454@gmail.com',
+      subject: `New Contact Form Submission from ${name}`,
+      html: `<p><strong>Name:</strong> ${name}</p>
+             <p><strong>Email:</strong> ${email}</p>
+             <p><strong>Message:</strong><br/>${message}</p>`,
+    });
+    console.log('Resend API response:', response);
+    return { success: true };
+  } catch (error: any) {
+    console.error('Resend API error:', error);
+    return { success: false, message: error.message || 'Failed to send message.' };
   }
-
-  // In a real application, you would integrate with an email service like Resend or SendGrid here.
-  // For this example, we'll just log the data and simulate a successful submission.
-  console.log('New contact form submission:');
-  console.log(result.data);
-
-  // Simulate network delay
-  await new Promise(resolve => setTimeout(resolve, 1000));
-
-  return { success: true, message: 'Message sent successfully!' };
 }

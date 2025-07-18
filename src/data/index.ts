@@ -3,27 +3,30 @@ import { Code, Bot, Cloud } from 'lucide-react';
 // --- EDUCATION ---
 export const education = [
   {
-    institution: 'Lovely Professional University, Jalandhar, Punjab',
+    institution: 'Lovely Professional University, Jalandhar, Punjab (Bachelor of Technology (B.Tech), Computer Science and Engineering, Graduation)',
     degree: 'Bachelor of Technology (B.Tech), Computer Science and Engineering',
     duration: 'Jul 2023 – Aug 2027',
-    grade: 'Graduation',
+    grade: 'A',
     skills: ['Engineering', 'CSS', 'Freelancing', 'C', 'HTML5'],
+    image: '/lpu.webp', // placeholder
   },
   {
-    institution: 'Indraprastha Global School, Noida',
+    institution: 'Indraprastha Global School, Noida (High School Diploma, PCM with Computer Science, 12th)',
     degree: 'High School Diploma, PCM with Computer Science',
     duration: 'May 2021 – Mar 2023',
-    grade: '12th',
+    grade: 'A',
     activities: ['Project Management'],
     skills: ['New Product Ideas', 'Project Management', 'MySQL', 'Team Building', 'Python'],
+    image: '/IPGS.webp', // placeholder
   },
   {
-    institution: 'Saraswati Vidya Mandir',
+    institution: 'Saraswati Vidya Mandir (8th to 10th – Liberal Arts and Sciences, 10th)',
     degree: '8th to 10th – Liberal Arts and Sciences',
     duration: 'Apr 2017 – Mar 2021',
-    grade: '10th',
+    grade: 'B+',
     activities: ['Football', 'Cricket', 'Chess', 'Quizzes', 'Swimming', 'Public Speaking'],
     skills: ['Public Speaking', 'Swimming'],
+    image: '/saraswati.webp', // placeholder
   },
 ];
 
@@ -44,14 +47,9 @@ export const skills = [
     { name: 'Node.js', icon: 'nodejs' },
     { name: 'Express.js', icon: 'express' },
     { name: 'MongoDB', icon: 'mongodb' },
-    { name: 'Full Stack Development', icon: '' },
-    { name: 'MERN Stack', icon: '' },
     { name: 'SDA (DSA)', icon: '' },
-    { name: 'Project Management', icon: '' },
     { name: 'GitHub', icon: 'github' },
-    { name: 'REST API', icon: '' },
     { name: 'MySQL', icon: 'mysql' },
-    { name: 'Responsive Design', icon: '' },
     { name: 'UI/UX', icon: '' }
 ];
 
@@ -62,12 +60,14 @@ export const certifications = [
     issuer: 'Coursera',
     issued: 'Aug 2024',
     skills: ['Operating Systems', 'Computer Hardware'],
+    image: '/photo4.jpg', // placeholder
   },
   {
     name: 'Responsive Web Design',
     issuer: 'freeCodeCamp',
     issued: 'Nov 2023',
     skills: ['HTML5', 'CSS', 'Responsive Layouts'],
+    image: '/photo5.jpg', // placeholder
   },
   {
     name: 'Product Management Job Simulation',
@@ -75,12 +75,14 @@ export const certifications = [
     issued: 'Oct 2023',
     credentialId: 'CFC7aH2ALc3uBFa2g',
     skills: ['Product Thinking', 'Agile', 'Digital Art'],
+    image: '/photo6.jpg', // placeholder
   },
   {
     name: 'Digital Arts Certification',
     issuer: '',
     issued: 'Oct 2023',
     skills: ['Digital Illustration', 'Graphic Design', 'Animation'],
+    image: '/photo7.jpg', // placeholder
   },
   {
     name: 'Fundamentals of Digital Marketing',
@@ -88,6 +90,7 @@ export const certifications = [
     issued: 'Oct 2023',
     credentialId: '220053626',
     skills: ['SEO', 'Social Media Marketing', 'Content Strategy'],
+    image: '/photo8.jpg', // placeholder
   },
 ];
 

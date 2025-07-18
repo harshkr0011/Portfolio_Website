@@ -11,9 +11,13 @@ import { cn } from '@/lib/utils';
 
 export const navItems = [
   { href: '#about', label: 'About' },
+  { href: '#education', label: 'Education' },
+  { href: '#certifications', label: 'Certifications' },
+  { href: '#photos', label: 'Photo Gallery' },
   { href: '#services', label: 'Services' },
-  { href: '#projects', label: 'Projects' },
-  { href: '/blog', label: 'Blog' },
+  { href: '#portfolio-tailor', label: 'Portfolio Tailor' },
+  { href: '#projects', label: 'My Work' },
+  { href: '#blog-preview', label: 'Blog' },
   { href: '#contact', label: 'Contact' },
 ];
 
@@ -32,21 +36,37 @@ const Header = () => {
   const NavLinks = ({ inSheet }: { inSheet?: boolean }) => (
     <>
       {navItems.map((item) => {
-        const isExternal = item.href.startsWith('/');
-        const LinkComponent = isExternal ? Link : 'a';
-        return (
-          <LinkComponent
-            key={item.label}
-            href={item.href}
-            className={cn(
-              "text-sm font-medium transition-colors hover:text-primary",
-              inSheet ? "block py-2 text-lg" : ""
-            )}
-            onClick={() => inSheet && setIsMobileMenuOpen(false)}
-          >
-            {item.label}
-          </LinkComponent>
-        );
+        if (item.href.startsWith('/')) {
+          // Use Next.js Link for /blog
+          return (
+            <Link
+              key={item.label}
+              href={item.href}
+              className={cn(
+                "text-sm font-medium transition-colors hover:text-primary",
+                inSheet ? "block py-2 text-lg" : ""
+              )}
+              onClick={() => inSheet && setIsMobileMenuOpen(false)}
+            >
+              {item.label}
+            </Link>
+          );
+        } else {
+          // Use <a> for anchor links
+          return (
+            <a
+              key={item.label}
+              href={item.href}
+              className={cn(
+                "text-sm font-medium transition-colors hover:text-primary",
+                inSheet ? "block py-2 text-lg" : ""
+              )}
+              onClick={() => inSheet && setIsMobileMenuOpen(false)}
+            >
+              {item.label}
+            </a>
+          );
+        }
       })}
     </>
   );
