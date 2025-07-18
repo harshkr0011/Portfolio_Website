@@ -8,9 +8,9 @@ const Education = () => {
         <h2 className="text-3xl font-bold text-center mb-12">Education</h2>
         <div className="space-y-8">
           {education.map((edu, index) => (
-            <div key={index} className="bg-gray-800 p-10 pr-56 rounded-lg shadow-lg max-w-screen-md mx-auto px-4 relative transition-transform duration-300 hover:scale-105 hover:shadow-2xl focus-within:scale-105 focus-within:shadow-2xl">
+            <div key={index} className="bg-gray-800 md:p-10 p-4 md:pr-56 pr-4 rounded-lg shadow-lg max-w-screen-md mx-auto relative transition-transform duration-300 hover:scale-105 hover:shadow-2xl focus-within:scale-105 focus-within:shadow-2xl">
               {edu.image && (
-                <div className="absolute top-4 right-4 w-52 aspect-[4/3] rounded-lg overflow-hidden border-2 border-primary bg-background">
+                <div className="absolute top-4 right-4 md:w-52 w-28 md:aspect-[4/3] aspect-[4/3] min-h-[120px] rounded-lg overflow-hidden border-2 border-primary bg-background">
                   <Image
                     src={edu.image}
                     alt={edu.institution + ' image'}
