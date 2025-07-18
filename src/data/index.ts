@@ -1,41 +1,191 @@
 import { Code, Bot, Cloud } from 'lucide-react';
 
+// --- EDUCATION ---
+export const education = [
+  {
+    institution: 'Lovely Professional University, Jalandhar, Punjab',
+    degree: 'Bachelor of Technology (B.Tech), Computer Science and Engineering',
+    duration: 'Jul 2023 – Aug 2027',
+    grade: 'Graduation',
+    skills: ['Engineering', 'CSS', 'Freelancing', 'C', 'HTML5'],
+  },
+  {
+    institution: 'Indraprastha Global School, Noida',
+    degree: 'High School Diploma, PCM with Computer Science',
+    duration: 'May 2021 – Mar 2023',
+    grade: '12th',
+    activities: ['Project Management'],
+    skills: ['New Product Ideas', 'Project Management', 'MySQL', 'Team Building', 'Python'],
+  },
+  {
+    institution: 'Saraswati Vidya Mandir',
+    degree: '8th to 10th – Liberal Arts and Sciences',
+    duration: 'Apr 2017 – Mar 2021',
+    grade: '10th',
+    activities: ['Football', 'Cricket', 'Chess', 'Quizzes', 'Swimming', 'Public Speaking'],
+    skills: ['Public Speaking', 'Swimming'],
+  },
+];
+
 // --- SKILLS ---
 export const skills = [
-  { name: 'React', icon: 'react' },
-  { name: 'Next.js', icon: 'nextjs' },
-  { name: 'JavaScript', icon: 'javascript' },
-  { name: 'TypeScript', icon: 'typescript' },
-  { name: 'Node.js', icon: 'nodejs' },
-  { name: 'MongoDB', icon: 'mongodb' },
-  { name: 'MySQL', icon: 'mysql' },
-  { name: 'Git', icon: 'git' },
-  { name: 'C++', icon: 'cpp' },
-  { name: 'C', icon: 'c' },
-  { name: 'Java', icon: 'java' },
-  { name: 'Python', icon: 'python' },
-  { name: 'PHP', icon: 'php' },
+    { name: 'C', icon: 'c' },
+    { name: 'C++', icon: 'cpp' },
+    { name: 'Java', icon: 'java' },
+    { name: 'Python', icon: 'python' },
+    { name: 'JavaScript', icon: 'javascript' },
+    { name: 'PHP', icon: 'php' },
+    { name: 'SQL', icon: 'mysql' },
+    { name: 'HTML', icon: 'html5' },
+    { name: 'CSS', icon: 'css3' },
+    { name: 'Tailwind CSS', icon: 'tailwindcss' },
+    { name: 'jQuery', icon: 'jquery' },
+    { name: 'React', icon: 'react' },
+    { name: 'Node.js', icon: 'nodejs' },
+    { name: 'Express.js', icon: 'express' },
+    { name: 'MongoDB', icon: 'mongodb' },
+    { name: 'Full Stack Development', icon: '' },
+    { name: 'MERN Stack', icon: '' },
+    { name: 'SDA (DSA)', icon: '' },
+    { name: 'Project Management', icon: '' },
+    { name: 'GitHub', icon: 'github' },
+    { name: 'REST API', icon: '' },
+    { name: 'MySQL', icon: 'mysql' },
+    { name: 'Responsive Design', icon: '' },
+    { name: 'UI/UX', icon: '' }
+];
+
+// --- CERTIFICATIONS ---
+export const certifications = [
+  {
+    name: 'Hardware and Operating System Essentials',
+    issuer: 'Coursera',
+    issued: 'Aug 2024',
+    skills: ['Operating Systems', 'Computer Hardware'],
+  },
+  {
+    name: 'Responsive Web Design',
+    issuer: 'freeCodeCamp',
+    issued: 'Nov 2023',
+    skills: ['HTML5', 'CSS', 'Responsive Layouts'],
+  },
+  {
+    name: 'Product Management Job Simulation',
+    issuer: 'Electronic Arts (via Forage)',
+    issued: 'Oct 2023',
+    credentialId: 'CFC7aH2ALc3uBFa2g',
+    skills: ['Product Thinking', 'Agile', 'Digital Art'],
+  },
+  {
+    name: 'Digital Arts Certification',
+    issuer: '',
+    issued: 'Oct 2023',
+    skills: ['Digital Illustration', 'Graphic Design', 'Animation'],
+  },
+  {
+    name: 'Fundamentals of Digital Marketing',
+    issuer: 'Google',
+    issued: 'Oct 2023',
+    credentialId: '220053626',
+    skills: ['SEO', 'Social Media Marketing', 'Content Strategy'],
+  },
 ];
 
 // --- EXPERIENCE ---
 export const experience = [
   {
-    year: '2022 - Present',
-    title: 'Full Stack Developer',
-    company: 'Freelance & Personal Projects',
-    description: 'Building and deploying MERN stack applications, focusing on creating seamless user experiences and robust, scalable solutions. Continuously learning and applying new technologies.',
+    year: 'Aug 2024 – Present',
+    title: 'Vice President – Pioneers Club',
+    company: 'Lovely Professional University, Jalandhar',
+    location: 'On-Site',
+    description: 'Led non-technical club activities such as singing, dancing, poetry, podcasting, and sports. Focused on creativity, innovation, and leadership development among students.',
+  },
+];
+
+// --- PROJECTS ---
+export const projects = [
+  {
+    slug: 'cultural-etiquette-guide',
+    title: 'Cultural Etiquette Guide',
+    description: 'A web app offering AI-powered etiquette guides and cultural landmark maps for travelers.',
+    tags: ['AI', 'Google Maps', 'React'],
+    image: 'https://placehold.co/600x400.png',
+    liveUrl: '#',
+    repoUrl: '#',
+    date: '2024-01-01',
+    details: {
+        longDescription: 'A web app offering AI-powered etiquette guides and cultural landmark maps for travelers.',
+        challenge: '',
+        solution: '',
+        features: [
+            'AI-generated etiquette summaries (short/detailed)',
+            'Google Maps integration',
+            'Dark mode support',
+            'Responsive design',
+            'Ripple animation on buttons'
+        ],
+        images: [],
+        testimonials: []
+    }
   },
   {
-    year: '2021 - 2022',
-    title: 'Web Development Intern',
-    company: 'Creative Tech Firm',
-    description: 'Assisted the development team in building responsive websites using HTML, CSS, and JavaScript. Gained hands-on experience with React and backend integration.',
+    slug: 'nexus-notes',
+    title: 'Nexus Notes – Personal Note Keeper',
+    description: 'A modern web-based note management system with tagging, search, and minimalist UI.',
+    tags: ['MERN'],
+    image: 'https://placehold.co/600x400.png',
+    liveUrl: '#',
+    repoUrl: '#',
+    date: '2024-01-01',
+    details: {
+        longDescription: 'A modern web-based note management system with tagging, search, and minimalist UI.',
+        challenge: '',
+        solution: '',
+        features: ['CRUD notes', 'user sessions', 'responsive design'],
+        images: [],
+        testimonials: []
+    }
   },
   {
-    year: '2021 - Present',
-    title: 'B.Tech CSE Student',
-    company: 'Lovely Professional University',
-    description: 'Focusing on core computer science concepts including Data Structures, Algorithms, and OOP. Actively participating in coding challenges and hackathons.',
+    slug: 'secure-syscall-interface',
+    title: 'Secure Syscall Interface',
+    description: 'A secure, interactive system call simulator.',
+    tags: ['Python', 'SQLite', 'HTML/CSS/JS'],
+    image: 'https://placehold.co/600x400.png',
+    liveUrl: '#',
+    repoUrl: '#',
+    date: '2024-01-01',
+    details: {
+        longDescription: 'A secure, interactive system call simulator.',
+        challenge: '',
+        solution: '',
+        features: [
+            'User authentication (login/register with roles)',
+            'File operations via syscall emulation (read, write, open, close)',
+            'Dynamic syscall selection and logging',
+            'Role-based access'
+        ],
+        images: [],
+        testimonials: []
+    }
+  },
+  {
+    slug: 'food-delivery-website',
+    title: 'Food Delivery Website',
+    description: 'A user-friendly food delivery platform with login, menu display, cart system, and order processing.',
+    tags: ['HTML', 'CSS', 'JS', 'MongoDB', 'Express', 'Node.js', 'React'],
+    image: 'https://placehold.co/600x400.png',
+    liveUrl: '#',
+    repoUrl: '#',
+    date: '2024-01-01',
+    details: {
+        longDescription: 'A user-friendly food delivery platform with login, menu display, cart system, and order processing.',
+        challenge: '',
+        solution: '',
+        features: [],
+        images: [],
+        testimonials: []
+    }
   },
 ];
 
@@ -55,91 +205,6 @@ export const services = [
     title: 'Cloud & DevOps',
     description: 'Deploying and managing applications on cloud platforms like Vercel, Netlify, and Firebase. Setting up CI/CD pipelines for automated, reliable deployments.',
     icon: Cloud,
-  },
-];
-
-// --- PROJECTS ---
-export const projects = [
-  {
-    slug: 'e-commerce-platform',
-    title: 'E-commerce Platform',
-    description: 'A feature-rich e-commerce platform with a modern UI.',
-    tags: ['React', 'Next.js', 'TypeScript', 'Stripe'],
-    image: 'https://placehold.co/600x400.png',
-    dataAiHint: 'online shopping',
-    liveUrl: '#',
-    repoUrl: '#',
-    date: '2024-06-15',
-    details: {
-      longDescription: 'This project is a full-featured e-commerce platform built with Next.js. It includes product browsing, a shopping cart, a secure checkout process with Stripe integration, and a user dashboard for managing orders.',
-      challenge: 'The primary challenge was to create a high-performance, secure, and user-friendly online store that could handle a large inventory and process payments reliably using Stripe.',
-      solution: 'I built the application using Next.js for server-side rendering to ensure fast page loads and optimal SEO. Stripe was integrated for secure payment processing. The UI was designed to be intuitive and fully responsive.',
-      features: ['Product filtering and search', 'Shopping cart management', 'Stripe payment integration', 'User authentication'],
-      images: [
-        'https://placehold.co/1200x800.png',
-        'https://placehold.co/1200x800.png',
-        'https://placehold.co/1200x800.png',
-      ],
-      dataAiHints: ['e-commerce website', 'product page', 'shopping cart'],
-      testimonials: [
-        {
-          quote: "Working on this was a fantastic experience. The code quality is top-notch.",
-          name: "Jane Doe",
-          title: "Project Manager"
-        }
-      ]
-    }
-  },
-  {
-    slug: 'project-management-tool',
-    title: 'Project Management Tool',
-    description: 'A collaborative tool for teams to manage projects and tasks.',
-    tags: ['React', 'Firebase', 'Framer Motion'],
-    image: 'https://placehold.co/600x400.png',
-    dataAiHint: 'dashboard tasks',
-    liveUrl: '#',
-    repoUrl: '#',
-    date: '2024-03-20',
-    details: {
-      longDescription: 'This is a real-time, collaborative project management tool inspired by Trello and Asana. It uses Firebase for backend services and features drag-and-drop functionality for task management.',
-      challenge: 'The main goal was to enable real-time collaboration between team members. Implementing a seamless drag-and-drop interface for task management across different users was a key technical hurdle.',
-      solution: 'Firebase Firestore was used for real-time data synchronization, ensuring all users see updates instantly. The frontend was built with React and Framer Motion to create a smooth, intuitive drag-and-drop experience.',
-      features: ['Real-time collaboration', 'Drag-and-drop kanban board', 'Task assignments and deadlines', 'Team management'],
-      images: [
-        'https://placehold.co/1200x800.png',
-        'https://placehold.co/1200x800.png',
-      ],
-      dataAiHints: ['kanban board', 'project management'],
-       testimonials: []
-    }
-  },
-  {
-    slug: 'ai-blogging-platform',
-    title: 'AI Blogging Platform',
-    description: 'A blog that uses AI to help writers generate content.',
-    tags: ['Next.js', 'GenAI', 'GraphQL'],
-    image: 'https://placehold.co/600x400.png',
-    dataAiHint: 'writing robot',
-    liveUrl: '#',
-    repoUrl: '#',
-    date: '2024-05-10',
-     details: {
-      longDescription: 'This platform empowers writers by integrating a generative AI to assist with brainstorming, drafting, and refining blog posts. It connects to a headless CMS via GraphQL.',
-      challenge: 'Integrating a generative AI smoothly into the user\'s writing workflow was the biggest challenge. The AI needed to provide helpful suggestions without being intrusive.',
-      solution: 'I used Genkit to connect to the Gemini API, providing writers with contextual AI assistance. The platform was built with a clean, minimalist interface to keep the focus on writing, with AI tools available on demand.',
-      features: ['AI-powered content generation', 'Markdown editor', 'User authentication', 'GraphQL API integration'],
-      images: [
-        'https://placehold.co/1200x800.png',
-      ],
-      dataAiHints: ['AI writing'],
-      testimonials: [
-        {
-          quote: "The AI features are incredibly innovative and well-implemented.",
-          name: "John Smith",
-          title: "Tech Blogger"
-        }
-      ]
-    }
   },
 ];
 
@@ -232,7 +297,7 @@ Hooks are a powerful tool in any React developer's arsenal. By understanding and
   {
     slug: 'getting-started-with-three-js',
     title: 'Getting Started with Three.js in React',
-    excerpt: 'Learn how to integrate stunning 3D graphics into your Next.js application using Three.js.',
+    excerpt: 'Learn how to integrate a stunning 3D graphics into your Next.js application using Three.js.',
     date: '2024-04-22',
     content: `
 ## Setting up the Scene

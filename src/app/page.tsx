@@ -8,6 +8,8 @@ import BlogPreviewSection from '@/components/sections/blog-preview';
 import ContactSection from '@/components/sections/contact';
 import PortfolioTailorSection from '@/components/sections/portfolio-tailor';
 import PhotoGallerySection from '@/components/sections/photo-gallery';
+import Education from '@/components/sections/education';
+import Certifications from '@/components/sections/certifications';
 
 export default function Home() {
   return (
@@ -16,6 +18,8 @@ export default function Home() {
       <main className="flex-1">
         <HeroSection />
         <AboutSection />
+        <Education />
+        <Certifications />
         <PhotoGallerySection />
         <ServicesSection />
         <PortfolioTailorSection />
