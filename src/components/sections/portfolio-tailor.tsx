@@ -54,7 +54,7 @@ const PortfolioTailorSection = () => {
   }
 
   return (
-    <section id="portfolio-tailor" className="py-20 md:py-32 bg-secondary/50">
+    <section id="portfolio-tailor" className="py-12 md:py-20 bg-secondary/50">
       <div className="container mx-auto px-4 md:px-6">
         <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -62,22 +62,22 @@ const PortfolioTailorSection = () => {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.5 }}
         >
-            <h2 className="font-headline text-3xl md:text-4xl font-bold text-center mb-4">AI-Powered Portfolio Tailor</h2>
-            <p className="text-lg text-muted-foreground text-center max-w-3xl mx-auto mb-12">
+            <h2 className="font-headline text-2xl md:text-3xl font-bold text-center mb-3">AI-Powered Portfolio Tailor</h2>
+            <p className="text-base text-muted-foreground text-center max-w-2xl mx-auto mb-8">
                 Paste a job description and your project experience to let AI highlight your most relevant skills.
             </p>
         </motion.div>
         
-        <div className="grid lg:grid-cols-2 gap-12 items-start">
+        <div className="grid lg:grid-cols-2 gap-8 items-start">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true, amount: 0.2 }}
               transition={{ duration: 0.7 }}
             >
-              <Card className="p-8 bg-background shadow-lg">
+              <Card className="p-6 bg-background shadow-lg">
                 <Form {...form}>
-                  <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                  <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
                     <FormField
                       control={form.control}
                       name="jobDescription"
@@ -85,7 +85,7 @@ const PortfolioTailorSection = () => {
                         <FormItem>
                           <FormLabel>Job Description</FormLabel>
                           <FormControl>
-                            <Textarea placeholder="Paste the job description here..." {...field} rows={8} />
+                            <Textarea placeholder="Paste the job description here..." {...field} rows={6} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -98,7 +98,7 @@ const PortfolioTailorSection = () => {
                         <FormItem>
                           <FormLabel>Your Project Experience</FormLabel>
                           <FormControl>
-                            <Textarea placeholder="Describe your project experience in detail..." {...field} rows={8} />
+                            <Textarea placeholder="Describe your project experience in detail..." {...field} rows={6} />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -131,7 +131,7 @@ const PortfolioTailorSection = () => {
                             Your Tailored Summary
                         </CardTitle>
                     </CardHeader>
-                    <CardContent className="prose prose-sm dark:prose-invert min-h-[200px]">
+                    <CardContent className="prose prose-sm dark:prose-invert min-h-[150px]">
                         {isGenerating && (
                             <div className="flex items-center justify-center h-full">
                                 <Loader2 className="h-8 w-8 animate-spin text-muted-foreground" />

@@ -1,27 +1,50 @@
+'use client';
+
 import { education } from '@/data';
 import Image from 'next/image';
+import Link from 'next/link';
+import { useState } from 'react';
 
 const Education = () => {
+  const [showAll, setShowAll] = useState(false);
+  
   return (
     <section id="education" className="py-16 md:py-20">
       <div className="container">
         <h2 className="text-3xl font-bold text-center mb-12">Education</h2>
         <div className="space-y-8">
-          {education.map((edu, index) => (
+          {(showAll ? education : education.slice(0, 2)).map((edu, index) => (
             <div key={index} className="bg-gray-800 md:p-10 p-4 rounded-lg shadow-lg max-w-screen-md mx-auto relative transition-transform duration-300 hover:scale-105 hover:shadow-2xl focus-within:scale-105 focus-within:shadow-2xl flex flex-col">
               {/* Responsive image positioning */}
               {edu.image && (
                 <div
-                  className="md:absolute md:top-4 md:right-4 md:w-52 md:aspect-[4/3] w-40 h-28 md:h-auto md:mb-0 mx-auto mb-4 rounded-lg overflow-hidden border-2 border-primary bg-background flex-shrink-0"
+                  className="md:absolute md:top-4 md:right-4 md:w-52 md:aspect-[4/3] w-48 aspect-[4/3] md:h-auto md:mb-0 mx-auto mb-4 rounded-lg overflow-hidden border-2 border-primary bg-background flex-shrink-0"
                 >
-                  {/* Mobile: fixed size, md+: fill */}
-                  <Image
-                    src={edu.image}
-                    alt={edu.institution + ' image'}
-                    width={160}
-                    height={112}
-                    className="object-cover md:w-full md:h-full"
-                  />
+                  {/* Mobile: 4:3 aspect ratio, md+: fill */}
+                  {edu.link ? (
+                    <Link 
+                      href={edu.link} 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="block w-full h-full transition-transform hover:scale-105"
+                    >
+                      <Image
+                        src={edu.image}
+                        alt={edu.institution + ' image'}
+                        width={192}
+                        height={144}
+                        className="object-cover w-full h-full cursor-pointer"
+                      />
+                    </Link>
+                  ) : (
+                    <Image
+                      src={edu.image}
+                      alt={edu.institution + ' image'}
+                      width={192}
+                      height={144}
+                      className="object-cover w-full h-full"
+                    />
+                  )}
                 </div>
               )}
               <div className="flex flex-col md:pr-56">
@@ -64,6 +87,16 @@ const Education = () => {
             </div>
           ))}
         </div>
+        {education.length > 2 && (
+          <div className="flex justify-center mt-8">
+            <button
+              className="px-6 py-2 bg-primary text-primary-foreground rounded-lg font-semibold shadow hover:bg-primary/90 transition"
+              onClick={() => setShowAll((v) => !v)}
+            >
+              {showAll ? 'View Less' : 'View More'}
+            </button>
+          </div>
+        )}
       </div>
     </section>
   );

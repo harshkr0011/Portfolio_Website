@@ -9,6 +9,7 @@ export const education = [
     grade: 'A',
     skills: ['Engineering', 'CSS', 'Freelancing', 'C', 'HTML5'],
     image: '/lpu.webp', // placeholder
+    link: 'https://www.lpu.in/', // University website
   },
   {
     institution: 'Indraprastha Global School, Noida (High School Diploma, PCM with Computer Science, 12th)',
@@ -18,6 +19,7 @@ export const education = [
     activities: ['Project Management'],
     skills: ['New Product Ideas', 'Project Management', 'MySQL', 'Team Building', 'Python'],
     image: '/IPGS.webp', // placeholder
+    link: 'https://www.indraprasthaglobalschool.com/', // School website
   },
   {
     institution: 'Saraswati Vidya Mandir (8th to 10th – Liberal Arts and Sciences, 10th)',
@@ -27,6 +29,7 @@ export const education = [
     activities: ['Football', 'Cricket', 'Chess', 'Quizzes', 'Swimming', 'Public Speaking'],
     skills: ['Public Speaking', 'Swimming'],
     image: '/saraswati.webp', // placeholder
+    link: '#', // Add actual school website when available
   },
 ];
 
@@ -61,6 +64,7 @@ export const certifications = [
     issued: 'Aug 2024',
     skills: ['Operating Systems', 'Computer Hardware'],
     image: '/photo4.jpg', // placeholder
+    link: 'https://www.coursera.org/', // Coursera platform
   },
   {
     name: 'Responsive Web Design',
@@ -68,6 +72,7 @@ export const certifications = [
     issued: 'Nov 2023',
     skills: ['HTML5', 'CSS', 'Responsive Layouts'],
     image: '/photo5.jpg', // placeholder
+    link: 'https://www.freecodecamp.org/', // freeCodeCamp platform
   },
   {
     name: 'Product Management Job Simulation',
@@ -76,6 +81,7 @@ export const certifications = [
     credentialId: 'CFC7aH2ALc3uBFa2g',
     skills: ['Product Thinking', 'Agile', 'Digital Art'],
     image: '/photo6.jpg', // placeholder
+    link: 'https://www.theforage.com/', // Forage platform
   },
   {
     name: 'Digital Arts Certification',
@@ -83,6 +89,7 @@ export const certifications = [
     issued: 'Oct 2023',
     skills: ['Digital Illustration', 'Graphic Design', 'Animation'],
     image: '/photo7.jpg', // placeholder
+    link: '#', // Add actual certification link when available
   },
   {
     name: 'Fundamentals of Digital Marketing',
@@ -91,6 +98,7 @@ export const certifications = [
     credentialId: '220053626',
     skills: ['SEO', 'Social Media Marketing', 'Content Strategy'],
     image: '/photo8.jpg', // placeholder
+    link: 'https://learndigital.withgoogle.com/', // Google Digital Garage
   },
 ];
 
