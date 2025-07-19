@@ -7,7 +7,20 @@ export const education = [
     degree: 'Bachelor of Technology (B.Tech), Computer Science and Engineering',
     duration: 'Jul 2023 – Aug 2027',
     grade: 'A',
-    skills: ['Engineering', 'CSS', 'Freelancing', 'C', 'HTML5'],
+    activities: [
+      'Team Leadership',
+      'Hackathons',
+      'Project Collaboration',
+      'Technical Seminars',
+      'Peer Mentoring',
+    ],
+    skills: [
+      'Full Stack Development',
+      'AI Integration',
+      'Cloud Computing',
+      'Agile Methodologies',
+      'Database Design',
+    ],
     image: '/lpu.webp', // placeholder
     link: 'https://www.lpu.in/', // University website
   },
@@ -16,20 +29,43 @@ export const education = [
     degree: 'High School Diploma, PCM with Computer Science',
     duration: 'May 2021 – Mar 2023',
     grade: 'A',
-    activities: ['Project Management'],
-    skills: ['New Product Ideas', 'Project Management', 'MySQL', 'Team Building', 'Python'],
+    activities: [
+      'Project Leadership',
+      'Team Building',
+      'Science Fairs',
+      'Football',
+      'Extracurricular Clubs',
+    ],
+    skills: [
+      'New Product Ideation',
+      'Project Management',
+      'MySQL',
+      'Python',
+      'Analytical Thinking',
+    ],
     image: '/IPGS.webp', // placeholder
-    link: 'https://www.indraprasthaglobalschool.com/', // School website
+    link: 'https://www.ipgsnoida.com/', // School website
   },
   {
     institution: 'Saraswati Vidya Mandir (8th to 10th – Liberal Arts and Sciences, 10th)',
-    degree: '8th to 10th – Liberal Arts and Sciences',
-    duration: 'Apr 2017 – Mar 2021',
+    degree: 'Nursery to 10th – Liberal Arts and Sciences',
+    duration: 'Apr 2008 – Mar 2021',
     grade: 'B+',
-    activities: ['Football', 'Cricket', 'Chess', 'Quizzes', 'Swimming', 'Public Speaking'],
-    skills: ['Public Speaking', 'Swimming'],
+    activities: [
+      'Cricket',
+      'Chess',
+      'Quizzes',
+      'Swimming',
+      'Public Speaking',
+    ],
+    skills: [
+      'Public Speaking',
+      'Creative Writing',
+      'Teamwork',
+      'Time Management',
+    ],
     image: '/saraswati.webp', // placeholder
-    link: '#', // Add actual school website when available
+    link: 'https://www.facebook.com/p/%E0%A4%B0%E0%A4%BE%E0%A4%9C%E0%A4%B2%E0%A4%95%E0%A5%8D%E0%A4%B7%E0%A5%8D%E0%A4%AE%E0%A5%80-%E0%A4%A7%E0%A4%B0%E0%A4%A3%E0%A5%80%E0%A4%A7%E0%A4%B0-%E0%A4%B8%E0%A4%B0%E0%A4%B8%E0%A5%8D%E0%A4%B5%E0%A4%A4%E0%A5%80-%E0%A4%B6%E0%A4%BF%E0%A4%B6%E0%A5%81%E0%A4%B5%E0%A4%BF%E0%A4%A6%E0%A5%8D%E0%A4%AF%E0%A4%BE-%E0%A4%AE%E0%A4%82%E0%A4%A6%E0%A4%BF%E0%A4%B0-%E0%A4%AA%E0%A4%82%E0%A4%9A%E0%A4%97%E0%A4%9B%E0%A4%BF%E0%A4%AF%E0%A4%BE-100054204833693/', // Add actual school website when available
   },
 ];
 
@@ -59,20 +95,37 @@ export const skills = [
 // --- CERTIFICATIONS ---
 export const certifications = [
   {
+    name: "From Relational Model (SQL) to MongoDB's Document Model",
+    issuer: 'MongoDB',
+    issued: '6/28/2025',
+    expiration: 'This credential does not expire',
+    credentialId: '2d12fbd2-9a2c-48cb-b5a4-39c1ba0ad1f6',
+    description: 'This digital credential validates your knowledge of see more...',
+    skills: [
+      'CRUD Operations',
+      'Aggregation',
+      'Indexing',
+      'And many more'
+    ],
+    image: '/MongoDB.png', // placeholder
+    link: 'https://www.credly.com/users/harsh-kumar.c66093ec/edit#credly',
+  },
+  {
     name: 'Hardware and Operating System Essentials',
     issuer: 'Coursera',
     issued: 'Aug 2024',
+    credentialId: '738c4578-58a5-454b-8936-f07ec6ce801f',
     skills: ['Operating Systems', 'Computer Hardware'],
-    image: '/photo4.jpg', // placeholder
-    link: 'https://www.coursera.org/', // Coursera platform
+    image: '/Hardware.png', // placeholder
+    link: 'https://www.credly.com/badges/738c4578-58a5-454b-8936-f07ec6ce801f/linked_in_profile', // Coursera platform
   },
   {
     name: 'Responsive Web Design',
     issuer: 'freeCodeCamp',
     issued: 'Nov 2023',
     skills: ['HTML5', 'CSS', 'Responsive Layouts'],
-    image: '/photo5.jpg', // placeholder
-    link: 'https://www.freecodecamp.org/', // freeCodeCamp platform
+    image: '/FreeCodeCamp.png', // placeholder
+    link: 'https://www.freecodecamp.org/certification/Harsh_kumar0011/responsive-web-design', // freeCodeCamp platform
   },
   {
     name: 'Product Management Job Simulation',
@@ -80,26 +133,20 @@ export const certifications = [
     issued: 'Oct 2023',
     credentialId: 'CFC7aH2ALc3uBFa2g',
     skills: ['Product Thinking', 'Agile', 'Digital Art'],
-    image: '/photo6.jpg', // placeholder
-    link: 'https://www.theforage.com/', // Forage platform
-  },
-  {
-    name: 'Digital Arts Certification',
-    issuer: '',
-    issued: 'Oct 2023',
-    skills: ['Digital Illustration', 'Graphic Design', 'Animation'],
-    image: '/photo7.jpg', // placeholder
-    link: '#', // Add actual certification link when available
+    image: '/DigitalArt.png', // placeholder
+    link: 'https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/Electronic%20Arts/5genWYpfo5b57G7yv_Electronic%20Arts_6TsgkFY6qaZteNibJ_1698392334465_completion_certificate.pdf', // Forage platform
   },
   {
     name: 'Fundamentals of Digital Marketing',
     issuer: 'Google',
     issued: 'Oct 2023',
     credentialId: '220053626',
-    skills: ['SEO', 'Social Media Marketing', 'Content Strategy'],
-    image: '/photo8.jpg', // placeholder
-    link: 'https://learndigital.withgoogle.com/', // Google Digital Garage
+    description: 'Passionate digital marketer with a strong foundation in the field, having successfully completed the prestigious Digital Marketing course offered by Google. Equipped with up-to-date knowledge and hands-on experience in the ever-evolving world of online marketing. Eager to apply my skills to drive results and make a meaningful impact in the digital landscape. Let\'s connect and explore how we can collaborate to achieve your marketing goals!',
+    skills: ['SEO','Digital Marketing', 'Online Marketing'],
+    image: '/DigitalMarketing.png', // placeholder
+    link: 'https://skillshop.exceedlms.com/student/award/ZPwmsVcMixAb399AA3U7F4rn', // Google Digital Garage
   },
+  
 ];
 
 // --- EXPERIENCE ---
