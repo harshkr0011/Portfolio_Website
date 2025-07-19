@@ -78,7 +78,7 @@ const AboutSection = () => {
               <h2 className="font-headline text-3xl md:text-4xl font-bold text-center">About Me</h2>
               <RotatingText
                 texts={[
-                  'Full-Stack-Developer', 'Developer', 'Engineer', 'Programmer', 'Coder', 'Architect', 'Techie', 'Problem Solver',
+                  'Full-Stack Developer', 'Developer', 'Engineer', 'Programmer', 'Coder', 'Architect', 'Techie', 'Problem Solver',
                   'Innovator', 'Builder', 'Mentor', 'UI/UX Designer', 'API Expert','AI Expert',
                   'Team Player'
                 ]}
