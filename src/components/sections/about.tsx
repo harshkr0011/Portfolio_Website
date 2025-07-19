@@ -7,6 +7,9 @@ import { experience, skills, projects } from '@/data';
 import { Badge } from '@/components/ui/badge';
 import AnimatedCounter from '@/components/shared/animated-counter';
 import { useState } from 'react';
+import { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider } from '@/components/ui/tooltip';
+import ProfileCard from '@/components/shared/ProfileCard';
+import RotatingText from '@/components/shared/RotatingText';
 
 const SkillIcon = ({ icon }: { icon: string }) => {
   const icons: { [key: string]: React.ReactNode } = {
@@ -70,9 +73,29 @@ const AboutSection = () => {
           viewport={{ once: true, amount: 0.3 }}
           variants={cardVariants}
         >
-          <h2 className="font-headline text-3xl md:text-4xl font-bold text-center mb-4">About Me</h2>
+          <div className="flex flex-col items-center mb-4">
+            <div className="flex flex-row items-center gap-4 justify-center">
+              <h2 className="font-headline text-3xl md:text-4xl font-bold text-center">About Me</h2>
+              <RotatingText
+                texts={[
+                  'Full-Stack-Developer', 'Developer', 'Engineer', 'Programmer', 'Coder', 'Architect', 'Techie', 'Problem Solver',
+                  'Innovator', 'Builder', 'Mentor', 'UI/UX Designer', 'API Expert','AI Expert',
+                  'Team Player'
+                ]}
+                mainClassName="px-2 sm:px-2 md:px-3 bg-cyan-300 text-black overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg text-2xl md:text-3xl font-bold"
+                staggerFrom={"last"}
+                initial={{ y: "100%" }}
+                animate={{ y: 0 }}
+                exit={{ y: "-120%" }}
+                staggerDuration={0.025}
+                splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
+                transition={{ type: "spring", damping: 30, stiffness: 400 }}
+                rotationInterval={2000}
+              />
+            </div>
+          </div>
           <p className="text-lg text-muted-foreground text-center max-w-3xl mx-auto mb-12">
-           🚀 Hey there! I'm Harsh Kumar, a B.Tech CSE Student and a full-stack developer passionate about building modern, meaningful web applications—from frontend finesse to backend brilliance. Welcome to my digital space!
+            🚀 Hey there! I'm <span className="font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Harsh Kumar</span>, a B.Tech CSE Student and a full-stack developer passionate about building modern, meaningful web applications—from frontend finesse to backend brilliance. Welcome to my digital space!
           </p>
         </motion.div>
 
@@ -112,33 +135,48 @@ const AboutSection = () => {
             viewport={{ once: true, amount: 0.3 }}
             variants={cardVariants}
           >
-            <div className="relative w-80 h-80 mx-auto">
-              <Image
-                src="/New1pic.jpg"
-                alt="Harsh Kumar Portrait"
-                data-ai-hint="developer portrait"
-                width={400}
-                height={400}
-                className="rounded-full object-cover shadow-lg border-4 border-primary/20"
+            <div className="flex justify-center">
+              <ProfileCard
+                name="Harsh Kumar"
+                title="Full-Stack Developer"
+                handle="harshkr0011"
+                status="Online"
+                contactText="Contact Me"
+                avatarUrl="/New1pic.jpg"
+                showUserInfo={true}
+                enableTilt={true}
+                // onContactClick={() => window.open('mailto:harshkr5454@gmail.com')}
+                onContactClick={() => {
+                  const el = document.getElementById('contact');
+                  if (el) {
+                    el.scrollIntoView({ behavior: 'smooth' });
+                  } else {
+                    window.location.hash = '#contact';
+                  }
+                }}
               />
-              <div className="absolute bottom-0 right-0 bg-accent rounded-full p-2 animate-bounce">
-                <Code className="text-accent-foreground" />
-              </div>
             </div>
 
             <div className="text-center">
               <h3 className="font-headline text-2xl font-semibold mb-4">My Skills</h3>
               <div className="flex flex-wrap justify-center gap-4">
-                {(showAllSkills ? skills : skills.slice(0, 10)).map((skill) => (
-                  <div key={skill.name} className="flex flex-col items-center gap-2 p-3 bg-background rounded-lg shadow-sm transition-transform hover:-translate-y-1">
-                    <SkillIcon icon={skill.icon} />
-                    <span className="text-sm font-medium">{skill.name}</span>
-                  </div>
-                ))}
+                <TooltipProvider>
+                  {(showAllSkills ? skills : skills.slice(0, 10)).map((skill) => (
+                    <Tooltip key={skill.name}>
+                      <TooltipTrigger asChild>
+                        <div className="flex flex-col items-center gap-2 p-3 bg-background rounded-lg shadow-sm transition-transform hover:-translate-y-2 hover:scale-105 hover:shadow-xl cursor-pointer">
+                          <SkillIcon icon={skill.icon} />
+                          <span className="text-sm font-medium">{skill.name}</span>
+                        </div>
+                      </TooltipTrigger>
+                      <TooltipContent>{skill.name}</TooltipContent>
+                    </Tooltip>
+                  ))}
+                </TooltipProvider>
               </div>
               {skills.length > 10 && (
                 <button
-                  className="mt-4 px-6 py-2 bg-primary text-primary-foreground rounded-lg font-semibold shadow hover:bg-primary/90 transition"
+                  className="mt-4 px-6 py-2 bg-primary text-primary-foreground rounded-lg font-semibold shadow hover:bg-primary/90 transition animate-pulse hover:animate-none"
                   onClick={() => setShowAllSkills((v) => !v)}
                 >
                   {showAllSkills ? 'View Less' : 'View More'}

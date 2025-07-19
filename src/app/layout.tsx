@@ -1,18 +1,31 @@
-import type {Metadata} from 'next';
+'use client';
+
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster"
 import ThreeDBackground from '@/components/3d/three-d-background';
-
-export const metadata: Metadata = {
-  title: 'Harsh Kumar',
-  description: 'An advanced web developer portfolio built with Next.js.',
-};
+import AnimatedCursor from '@/components/shared/animated-cursor';
+import { useEffect } from 'react';
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      import('cursor-effects').then((mod) => {
+        // @ts-ignore
+        const FairyDustCursor = mod.FairyDustCursor || window.FairyDustCursor;
+        if (FairyDustCursor) {
+          new FairyDustCursor({
+            colors: ['#60a5fa', '#a78bfa', '#f472b6', '#facc15', '#34d399'],
+            elementCount: 24,
+            zIndex: 9999,
+          });
+        }
+      });
+    }
+  }, []);
   return (
     <html lang="en" className="dark">
       <head>
@@ -22,6 +35,7 @@ export default function RootLayout({
         <link rel="icon" href="/Favicon1.ico" />
       </head>
       <body className="font-body antialiased">
+        <AnimatedCursor />
         <ThreeDBackground />
         <div className="relative z-10">
           {children}

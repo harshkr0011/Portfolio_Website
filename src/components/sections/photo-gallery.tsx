@@ -1,15 +1,6 @@
 "use client";
 
-import Image from 'next/image';
-import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-  CarouselDots,
-} from "@/components/ui/carousel";
-import React from 'react';
+import CircularGallery from '@/components/shared/CircularGallery';
 
 const photos = [
   '/photo1.jpg',
@@ -24,37 +15,16 @@ const photos = [
   // Add more image paths as needed (these should be in your public folder)
 ];
 
+const galleryItems = photos.map((src, idx) => ({ image: src, text: `Photo ${idx + 1}` }));
+
 const PhotoGallerySection = () => {
   return (
     <section id="photos" className="py-20 md:py-32 bg-background">
       <div className="container mx-auto px-4 md:px-6">
         <h2 className="font-headline text-3xl md:text-4xl font-bold text-center mb-8">Photo Gallery</h2>
-        <Carousel
-          opts={{
-            align: "start",
-            loop: true,
-          }}
-          className="w-full max-w-4xl mx-auto"
-        >
-          <CarouselContent>
-            {photos.map((src, idx) => (
-              <CarouselItem key={idx} className="md:basis-1/2 lg:basis-1/3">
-                <div className="p-1">
-                  <Image
-                    src={src}
-                    alt={`Photo ${idx + 1}`}
-                    width={400}
-                    height={400}
-                    className="object-cover w-full h-96 rounded-lg shadow-lg"
-                  />
-                </div>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
-          <CarouselDots className="mt-4" />
-        </Carousel>
+        <div style={{ height: '600px', position: 'relative' }}>
+          <CircularGallery items={galleryItems} bend={3} textColor="#ffffff" borderRadius={0.05} scrollEase={0.02} />
+        </div>
       </div>
     </section>
   );

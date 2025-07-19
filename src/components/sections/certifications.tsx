@@ -4,6 +4,7 @@ import { certifications } from '@/data';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 
 const Certifications = () => {
   const [showAll, setShowAll] = useState(false);
@@ -15,12 +16,16 @@ const Certifications = () => {
                 <div className="flex justify-center w-full">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-stretch w-full max-w-4xl">
             {certifications.map((cert, index) => (
-              <div 
-                key={index} 
+              <motion.div
+                key={index}
                 className={`bg-gray-800 p-6 pr-40 rounded-lg shadow-lg max-w-md w-full px-4 h-full flex flex-col relative transition-transform duration-300 hover:scale-105 hover:shadow-2xl focus-within:scale-105 focus-within:shadow-2xl ${
                   !showAll && index >= 4 ? 'hidden' : 
                   !showAll && index >= 2 ? 'hidden md:block' : ''
                 }`}
+                initial={{ opacity: 0, y: 40 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.6, delay: index * 0.15 }}
               >
                 {cert.image && (
                   <div className="absolute top-4 right-4 w-32 aspect-[4/3] rounded-lg overflow-hidden border-2 border-primary bg-background">
@@ -68,7 +73,7 @@ const Certifications = () => {
                     </div>
                   </div>
                 )}
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>

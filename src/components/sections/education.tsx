@@ -4,6 +4,7 @@ import { education } from '@/data';
 import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 
 const Education = () => {
   const [showAll, setShowAll] = useState(false);
@@ -14,7 +15,14 @@ const Education = () => {
         <h2 className="text-3xl font-bold text-center mb-12">Education</h2>
         <div className="space-y-8">
           {(showAll ? education : education.slice(0, 2)).map((edu, index) => (
-            <div key={index} className="bg-gray-800 md:p-10 p-4 rounded-lg shadow-lg max-w-screen-md mx-auto relative transition-transform duration-300 hover:scale-105 hover:shadow-2xl focus-within:scale-105 focus-within:shadow-2xl flex flex-col">
+            <motion.div
+              key={index}
+              className="bg-gray-800 md:p-10 p-4 rounded-lg shadow-lg max-w-screen-md mx-auto relative transition-transform duration-300 hover:scale-105 hover:shadow-2xl focus-within:scale-105 focus-within:shadow-2xl flex flex-col"
+              initial={{ opacity: 0, y: 40 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: index * 0.15 }}
+            >
               {/* Responsive image positioning */}
               {edu.image && (
                 <div
@@ -84,7 +92,7 @@ const Education = () => {
                   </div>
                 )}
               </div>
-            </div>
+            </motion.div>
           ))}
         </div>
         {education.length > 2 && (
