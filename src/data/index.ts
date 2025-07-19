@@ -124,7 +124,7 @@ export const certifications = [
     issuer: 'freeCodeCamp',
     issued: 'Nov 2023',
     skills: ['HTML5', 'CSS', 'Responsive Layouts'],
-    image: '/FreeCodeCamp.png', // placeholder
+    image: '/Freecodecamp.png', // placeholder
     link: 'https://www.freecodecamp.org/certification/Harsh_kumar0011/responsive-web-design', // freeCodeCamp platform
   },
   {
