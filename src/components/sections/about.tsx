@@ -10,6 +10,7 @@ import { useState } from 'react';
 import { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider } from '@/components/ui/tooltip';
 import ProfileCard from '@/components/shared/ProfileCard';
 import RotatingText from '@/components/shared/RotatingText';
+import BlurText from '@/components/shared/BlurText';
 
 const SkillIcon = ({ icon }: { icon: string }) => {
   const icons: { [key: string]: React.ReactNode } = {
