@@ -1,4 +1,3 @@
-
 "use client";
 
 import { useState, useEffect } from 'react';
@@ -19,6 +18,7 @@ export const navItems = [
   { href: '#projects', label: 'My Work' },
   { href: '#blog-preview', label: 'Blog' },
   { href: '#contact', label: 'Contact' },
+  { label: 'Resume', href: '/HK_Resume.pdf', external: true },
 ];
 
 const Header = () => {

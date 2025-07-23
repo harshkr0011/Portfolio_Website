@@ -55,7 +55,7 @@ const Footer = () => {
                  )
               })}
                 <li>
-                    <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground transition-colors hover:text-primary">Resume</a>
+                    <a href="/HK_Resume.pdf" target="_blank" rel="noopener noreferrer" className="text-sm text-muted-foreground transition-colors hover:text-primary">Resume</a>
                 </li>
             </ul>
           </div>
