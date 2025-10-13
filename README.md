@@ -2,7 +2,7 @@
 
 A modern, interactive portfolio website built with Next.js, featuring AI-powered personalization, stunning 3D graphics, and a comprehensive showcase of skills, projects, and experience.
 
-![Portfolio Preview](https://placehold.co/800x400/29ABE2/FFFFFF?text=DevSite+Spark+Portfolio)
+![Portfolio Preview](https://github.com/harshkr0011/Portfolio_Website/blob/master/uipic.png)
 
 ## ✨ Features
 
