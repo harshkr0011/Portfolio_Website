@@ -45,7 +45,7 @@ const ThreeDBackground = () => {
     scene.add(particles);
 
     // --- Floating Shapes ---
-    const shapes = [];
+    const shapes: THREE.Mesh[] = [];
     const shapeGeometry = new THREE.IcosahedronGeometry(0.2, 0);
     const shapeMaterial = new THREE.MeshStandardMaterial({
         color: 0x00aaff,
@@ -78,11 +78,11 @@ const ThreeDBackground = () => {
     let mouseY = 0;
 
     const onMouseMove = (event: MouseEvent) => {
-      mouseX = event.clientX - currentMount.clientWidth / 2;
-      mouseY = event.clientY - currentMount.clientHeight / 2;
+      mouseX = event.clientX - window.innerWidth / 2;
+      mouseY = event.clientY - window.innerHeight / 2;
     };
 
-    currentMount.addEventListener('mousemove', onMouseMove);
+    window.addEventListener('mousemove', onMouseMove);
 
     const clock = new THREE.Clock();
 
@@ -118,14 +118,14 @@ const ThreeDBackground = () => {
 
     return () => {
       window.removeEventListener('resize', handleResize);
+      window.removeEventListener('mousemove', onMouseMove);
       if (mountRef.current) {
-        mountRef.current.removeEventListener('mousemove', onMouseMove);
         mountRef.current.removeChild(renderer.domElement);
       }
     };
   }, []);
 
-  return <div ref={mountRef} className="absolute inset-0 z-0 opacity-20 dark:opacity-100" />;
+  return <div ref={mountRef} className="fixed inset-0 z-0 opacity-20 dark:opacity-100 pointer-events-none" />;
 };
 
 export default ThreeDBackground;

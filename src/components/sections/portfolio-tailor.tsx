@@ -62,7 +62,7 @@ const PortfolioTailorSection = () => {
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.5 }}
         >
-            <h2 className="font-headline text-2xl md:text-3xl font-bold text-center mb-3">AI-Powered Portfolio Tailor</h2>
+            <h2 className="font-headline text-2xl md:text-3xl font-bold text-center text-primary underline decoration-wavy decoration-primary/50 underline-offset-8 mb-8">AI-Powered Portfolio Tailor</h2>
             <p className="text-base text-muted-foreground text-center max-w-2xl mx-auto mb-8">
                 Paste a job description and your project experience to let AI highlight your most relevant skills.
             </p>

@@ -6,8 +6,7 @@ import ServicesSection from '@/components/sections/services';
 import ProjectsSection from '@/components/sections/projects';
 import BlogPreviewSection from '@/components/sections/blog-preview';
 import ContactSection from '@/components/sections/contact';
-import PortfolioTailorSection from '@/components/sections/portfolio-tailor';
-import PhotoGallerySection from '@/components/sections/photo-gallery';
+
 import Education from '@/components/sections/education';
 import Certifications from '@/components/sections/certifications';
 
@@ -20,10 +19,8 @@ export default function Home() {
         <AboutSection />
         <Education />
         <Certifications />
-        <PhotoGallerySection />
-        <ServicesSection />
-        <PortfolioTailorSection />
         <ProjectsSection />
+        <ServicesSection />
         <BlogPreviewSection />
         <ContactSection />
       </main>

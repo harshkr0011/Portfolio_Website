@@ -153,10 +153,31 @@ export const certifications = [
 export const experience = [
   {
     year: 'Aug 2024 – Present',
-    title: 'Vice President – Pioneers Club',
-    company: 'Lovely Professional University, Jalandhar',
-    location: 'On-Site',
-    description: 'Led non-technical club activities such as singing, dancing, poetry, podcasting, and sports. Focused on creativity, innovation, and leadership development among students.',
+    title: 'Vice President',
+    company: 'Pioneers',
+    location: 'Jalandhar, Punjab, India · On-site',
+    description: 'The "Pioneers" club at Lovely Professional University (LPU) fosters creativity and leadership through non-technical activities like singing, dancing, sports, poetry, and podcasting. Located on the LPU campus, the club encourages members to explore new areas and lead innovative initiatives, embodying a spirit of adventure and exploration.',
+  },
+  {
+    year: 'Aug 2025 – Present',
+    title: 'Campus Partner',
+    company: 'Perplexity',
+    location: 'Remote',
+    description: 'Selected as a 2025 Perplexity Campus Partner at Lovely Professional University, promoting the Comet browser and Perplexity AI through student communities, events, and peer engagement while building leadership and community-driven skills.',
+  },
+  {
+    year: 'Sep 2025 – Oct 2025',
+    title: 'Web Development Intern',
+    company: 'EazyByts.com',
+    location: 'India · Remote',
+    description: 'Working on Full Stack Web Development projects. Building and maintaining responsive, scalable web applications. Gaining hands-on experience with both frontend and backend technologies.',
+  },
+  {
+    year: 'Oct 2025 – Present',
+    title: 'Ai+ Insider',
+    company: 'Nxtquantum Shift Technologies',
+    location: 'Gurugram, Haryana, India · Remote',
+    description: 'Selected for the 6-month Ai+ Insiders Program to explore and test the Ai+ Smartphone powered by NxtQuantum OS. Contributing to product insights, user experience, and innovation within the Ai+ ecosystem.',
   },
 ];
 

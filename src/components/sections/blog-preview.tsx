@@ -12,7 +12,7 @@ const BlogPreviewSection = () => {
   return (
     <section id="blog-preview" className="py-20 md:py-32">
       <div className="container mx-auto px-4 md:px-6">
-        <h2 className="font-headline text-3xl md:text-4xl font-bold text-center mb-4">From My Blog</h2>
+        <h2 className="font-headline text-3xl md:text-4xl font-bold text-center text-primary underline decoration-wavy decoration-primary/50 underline-offset-8 mb-6">From My Blog</h2>
         <p className="text-lg text-muted-foreground text-center max-w-3xl mx-auto mb-12">
           I enjoy sharing my knowledge and writing about technology. Here are my latest articles.
         </p>
@@ -35,12 +35,12 @@ const BlogPreviewSection = () => {
           ))}
         </div>
 
-        <div className="text-center">
-          <Link href="/blog">
-            <Button variant="outline" size="lg" className="group">
+        <div className="text-center mt-4">
+          <Link href="/blog" className="inline-block group/link">
+            <button className="px-8 py-3 bg-primary text-primary-foreground rounded-full font-bold shadow-[0_0_15px_rgba(0,240,255,0.4)] hover:shadow-[0_0_25px_rgba(0,240,255,0.6)] hover:bg-primary/90 transition-all duration-300 hover:-translate-y-1 hover:scale-105 inline-flex items-center justify-center cursor-pointer">
               Visit The Blog
-              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover:translate-x-1" />
-            </Button>
+              <ArrowRight className="ml-2 h-5 w-5 transition-transform group-hover/link:translate-x-1" />
+            </button>
           </Link>
         </div>
       </div>

@@ -40,7 +40,7 @@ const ProjectsSection = () => {
   }, [activeTag, sortMethod]);
 
   return (
-    <section id="projects" className="py-20 md:py-32 bg-secondary">
+    <section id="projects" className="py-20 md:py-32">
       <div className="container mx-auto px-4 md:px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -48,7 +48,7 @@ const ProjectsSection = () => {
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.5 }}
         >
-          <h2 className="font-headline text-3xl md:text-4xl font-bold text-center mb-4">My Work</h2>
+          <h2 className="font-headline text-3xl md:text-4xl font-bold text-center text-primary underline decoration-wavy decoration-primary/50 underline-offset-8 mb-6">My Work</h2>
           <p className="text-lg text-muted-foreground text-center max-w-3xl mx-auto mb-12">
             Here's a selection of projects I've worked on. Feel free to explore and see my skills in action.
           </p>
@@ -97,7 +97,7 @@ const ProjectsSection = () => {
                 exit={{ opacity: 0, scale: 0.8 }}
                 transition={{ duration: 0.3 }}
               >
-                <Card className="h-full flex flex-col overflow-hidden transition-shadow duration-300 hover:shadow-2xl group">
+                <Card className="h-full flex flex-col overflow-hidden transition-all duration-300 hover:scale-[1.02] hover:shadow-2xl hover:shadow-primary/10 hover:border-primary/20 group bg-background/40 backdrop-blur-md border border-white/5">
                   <div className="relative overflow-hidden">
                     <div className="aspect-video relative">
                       <Image 
@@ -120,12 +120,12 @@ const ProjectsSection = () => {
                       ))}
                     </div>
                   </CardContent>
-                  <CardFooter>
-                    <Link href={`/projects/${project.slug}`} className="w-full">
-                      <Button variant="outline" className="w-full group/button">
+                  <CardFooter className="pb-6 px-6">
+                    <Link href={`/projects/${project.slug}`} className="w-full group/link">
+                      <button className="w-full px-4 py-3 bg-primary/10 text-primary border border-primary/20 hover:bg-primary hover:text-primary-foreground rounded-xl font-bold shadow-[0_0_10px_rgba(0,240,255,0.1)] hover:shadow-[0_0_20px_rgba(0,240,255,0.5)] transition-all duration-300 hover:-translate-y-1 hover:scale-[1.02] flex items-center justify-center cursor-pointer">
                         View Details
-                        <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/button:translate-x-1" />
-                      </Button>
+                        <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover/link:translate-x-1" />
+                      </button>
                     </Link>
                   </CardFooter>
                 </Card>

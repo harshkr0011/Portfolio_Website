@@ -11,6 +11,8 @@ import { Tooltip, TooltipTrigger, TooltipContent, TooltipProvider } from '@/comp
 import ProfileCard from '@/components/shared/ProfileCard';
 import RotatingText from '@/components/shared/RotatingText';
 import BlurText from '@/components/shared/BlurText';
+import HorizontalTimeline from '@/components/shared/horizontal-timeline';
+import { SkillGem, TARGET_SKILLS } from '@/components/shared/SkillGem';
 
 const SkillIcon = ({ icon }: { icon: string }) => {
   const icons: { [key: string]: React.ReactNode } = {
@@ -44,12 +46,6 @@ const SkillIcon = ({ icon }: { icon: string }) => {
   return icons[icon] || <Code className="h-10 w-10 text-primary" />;
 };
 
-const stats = [
-  { value: new Date().getFullYear() - 2021, label: 'Years Experience', icon: Briefcase },
-  { value: projects.length, label: 'Projects Completed', icon: Zap },
-  { value: 10, label: 'Happy Clients', icon: Smile },
-];
-
 const AboutSection = () => {
   const [showAllSkills, setShowAllSkills] = useState(false);
   const cardVariants = {
@@ -66,146 +62,114 @@ const AboutSection = () => {
   };
 
   return (
-    <section id="about" className="py-20 md:py-32 bg-secondary">
+    <section id="about" className="py-20 md:py-32">
       <div className="container mx-auto px-4 md:px-6">
-        <motion.div
-          initial="offscreen"
-          whileInView="onscreen"
-          viewport={{ once: true, amount: 0.3 }}
-          variants={cardVariants}
-        >
-          <div className="flex flex-col items-center mb-4">
-            <div className="flex flex-row items-center gap-4 justify-center">
-              <h2 className="font-headline text-3xl md:text-4xl font-bold text-center">About Me</h2>
-              <RotatingText
-                texts={[
-                  'Full-Stack Developer', 'Developer', 'Engineer', 'Programmer', 'Coder', 'Architect', 'Techie', 'Problem Solver',
-                  'Innovator', 'Builder', 'Mentor', 'UI/UX Designer', 'API Expert','AI Expert',
-                  'Team Player'
-                ]}
-                mainClassName="px-2 sm:px-2 md:px-3 bg-cyan-300 text-black overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg text-2xl md:text-3xl font-bold"
-                staggerFrom={"last"}
-                initial={{ y: "100%" }}
-                animate={{ y: 0 }}
-                exit={{ y: "-120%" }}
-                staggerDuration={0.025}
-                splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
-                transition={{ type: "spring", damping: 30, stiffness: 400 }}
-                rotationInterval={2000}
-              />
-            </div>
-          </div>
-          <p className="text-lg text-muted-foreground text-center max-w-3xl mx-auto mb-12">
-            🚀 Hey there! I'm <span className="font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Harsh Kumar</span>, a B.Tech CSE Student and a full-stack developer passionate about building modern, meaningful web applications—from frontend finesse to backend brilliance. Welcome to my digital space!
-          </p>
-        </motion.div>
-
-        <div className="grid md:grid-cols-5 gap-12 items-center">
-          {/* Timeline */}
-          <div className="md:col-span-3">
-            <h3 className="font-headline text-2xl font-semibold mb-8">Career Timeline</h3>
-            <div className="relative border-l-2 border-primary/20">
-              {experience.map((item, index) => (
-                <motion.div
-                  key={index}
-                  className="mb-20 ml-6"
-                  initial="offscreen"
-                  whileInView="onscreen"
-                  viewport={{ once: true, amount: 0.5 }}
-                  variants={{ offscreen: { x: -50, opacity: 0 }, onscreen: { x: 0, opacity: 1, transition: { duration: 0.5, delay: index * 0.2 } } }}
-                >
-                  <span className="absolute flex items-center justify-center w-6 h-6 bg-primary rounded-full -left-3 ring-8 ring-secondary">
-                    <Briefcase className="w-3 h-3 text-primary-foreground" />
-                  </span>
-                  <h4 className="flex items-center mb-1 text-lg font-semibold">
-                    {item.title}
-                    <Badge variant="secondary" className="ml-2">{item.year}</Badge>
-                  </h4>
-                  <p className="block mb-2 text-sm font-normal leading-none text-muted-foreground">{item.company}</p>
-                  <p className="text-base font-normal">{item.description}</p>
-                </motion.div>
-              ))}
-            </div>
-          </div>
-
-          {/* Skills & Image */}
-          <motion.div 
-            className="md:col-span-2 space-y-10"
+        <div className="grid md:grid-cols-12 gap-8 items-center mb-16">
+          <motion.div
+            className="md:col-span-7"
             initial="offscreen"
             whileInView="onscreen"
             viewport={{ once: true, amount: 0.3 }}
             variants={cardVariants}
           >
-            <div className="flex justify-center">
-              <ProfileCard
-                name="Harsh Kumar"
-                title="Full-Stack Developer"
-                handle="harshkr0011"
-                status="Online"
-                contactText="Contact Me"
-                avatarUrl="/New1pic.jpg"
-                showUserInfo={true}
-                enableTilt={true}
-                // onContactClick={() => window.open('mailto:harshkr5454@gmail.com')}
-                onContactClick={() => {
-                  const el = document.getElementById('contact');
-                  if (el) {
-                    el.scrollIntoView({ behavior: 'smooth' });
-                  } else {
-                    window.location.hash = '#contact';
-                  }
-                }}
-              />
-            </div>
-
-            <div className="text-center">
-              <h3 className="font-headline text-2xl font-semibold mb-4">My Skills</h3>
-              <div className="flex flex-wrap justify-center gap-4">
-                <TooltipProvider>
-                  {(showAllSkills ? skills : skills.slice(0, 10)).map((skill) => (
-                    <Tooltip key={skill.name}>
-                      <TooltipTrigger asChild>
-                        <div className="flex flex-col items-center gap-2 p-3 bg-background rounded-lg shadow-sm transition-transform hover:-translate-y-2 hover:scale-105 hover:shadow-xl cursor-pointer">
-                          <SkillIcon icon={skill.icon} />
-                          <span className="text-sm font-medium">{skill.name}</span>
-                        </div>
-                      </TooltipTrigger>
-                      <TooltipContent>{skill.name}</TooltipContent>
-                    </Tooltip>
-                  ))}
-                </TooltipProvider>
+            <div className="flex flex-col items-start mb-4">
+              <div className="flex flex-wrap flex-row items-center gap-4 justify-start">
+                <h2 className="font-headline text-3xl md:text-4xl font-bold text-left text-primary underline decoration-wavy decoration-primary/50 underline-offset-8 mb-6 mt-2">About Me</h2>
+                <RotatingText
+                  texts={[
+                    'Full-Stack Developer', 'Developer', 'Engineer', 'Programmer', 'Coder', 'Architect', 'Techie', 'Problem Solver',
+                    'Innovator', 'Builder', 'Mentor', 'UI/UX Designer', 'API Expert','AI Expert',
+                    'Team Player'
+                  ]}
+                  mainClassName="px-2 sm:px-2 md:px-3 bg-cyan-300 text-black overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg text-2xl md:text-3xl font-bold"
+                  staggerFrom={"last"}
+                  initial={{ y: "100%" }}
+                  animate={{ y: 0 }}
+                  exit={{ y: "-120%" }}
+                  staggerDuration={0.025}
+                  splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
+                  transition={{ type: "spring", damping: 30, stiffness: 400 }}
+                  rotationInterval={2000}
+                />
               </div>
-              {skills.length > 10 && (
-                <button
-                  className="mt-4 px-6 py-2 bg-primary text-primary-foreground rounded-lg font-semibold shadow hover:bg-primary/90 transition animate-pulse hover:animate-none"
-                  onClick={() => setShowAllSkills((v) => !v)}
-                >
-                  {showAllSkills ? 'View Less' : 'View More'}
-                </button>
-              )}
             </div>
+            <p className="text-xl md:text-2xl leading-relaxed text-muted-foreground text-left max-w-3xl">
+              🚀 Hey there! I'm <span className="font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">Harsh Kumar</span>, a B.Tech CSE Student and a full-stack developer passionate about building modern, meaningful web applications—from frontend finesse to backend brilliance. Welcome to my digital space!
+            </p>
+          </motion.div>
+
+          <motion.div
+            className="md:col-span-5 flex justify-center md:justify-end"
+            initial="offscreen"
+            whileInView="onscreen"
+            viewport={{ once: true, amount: 0.3 }}
+            variants={cardVariants}
+          >
+            <ProfileCard
+              name="Harsh Kumar"
+              title="Full-Stack Developer"
+              handle="harshkr0011"
+              status="Online"
+              contactText="Contact Me"
+              avatarUrl="/New1pic.jpg"
+              showUserInfo={true}
+              enableTilt={true}
+              onContactClick={() => {
+                const el = document.getElementById('contact');
+                if (el) {
+                  el.scrollIntoView({ behavior: 'smooth' });
+                } else {
+                  window.location.hash = '#contact';
+                }
+              }}
+            />
           </motion.div>
         </div>
-        
-        {/* Stats */}
-        <div className="mt-20 grid grid-cols-1 sm:grid-cols-3 gap-8 text-center">
-          {stats.map((stat, index) => (
-            <motion.div
-              key={index}
-              className="p-6 bg-background rounded-lg shadow-lg"
-              initial="offscreen"
-              whileInView="onscreen"
-              viewport={{ once: true, amount: 0.5 }}
-              variants={{ offscreen: { y: 50, opacity: 0 }, onscreen: { y: 0, opacity: 1, transition: { duration: 0.5, delay: index * 0.2 } } }}
+
+        <HorizontalTimeline />
+
+        {/* Skills */}
+        <motion.div 
+          className="w-full mt-24 space-y-10"
+          initial="offscreen"
+          whileInView="onscreen"
+          viewport={{ once: true, amount: 0.3 }}
+          variants={cardVariants}
+        >
+          <div className="text-center">
+            <h3 className="font-headline text-3xl font-bold text-center text-primary underline decoration-wavy decoration-primary/50 underline-offset-8 mb-10">My Skills</h3>
+            
+            <div className="flex flex-wrap items-center justify-center gap-6 md:gap-8 max-w-5xl mx-auto px-4 py-8">
+              {TARGET_SKILLS.map((skill, index) => {
+                let displayClass = 'block';
+                if (!showAllSkills) {
+                  if (index >= 12) displayClass = 'hidden';
+                  else if (index >= 6) displayClass = 'hidden md:block';
+                }
+                
+                return (
+                  <div key={skill.name} className={displayClass}>
+                    <SkillGem
+                      name={skill.name}
+                      iconUrl={skill.iconUrl}
+                      isText={skill.isText}
+                      shortName={skill.shortName}
+                      delay={index}
+                    />
+                  </div>
+                );
+              })}
+            </div>
+            <button
+              className="mt-4 px-8 py-3 bg-primary text-primary-foreground rounded-full font-bold shadow-[0_0_15px_rgba(0,240,255,0.4)] hover:shadow-[0_0_25px_rgba(0,240,255,0.6)] hover:bg-primary/90 transition-all duration-300 hover:-translate-y-1 hover:scale-105 inline-flex items-center justify-center animate-pulse hover:animate-none"
+              onClick={() => setShowAllSkills((v) => !v)}
             >
-              <stat.icon className="h-10 w-10 text-primary mx-auto mb-3" />
-              <div className="font-headline text-4xl font-bold">
-                <AnimatedCounter value={stat.value} />+
-              </div>
-              <p className="text-muted-foreground mt-1">{stat.label}</p>
-            </motion.div>
-          ))}
-        </div>
+              {showAllSkills ? 'Show Less' : 'Show More'}
+            </button>
+          </div>
+        </motion.div>
+        
+
       </div>
     </section>
   );

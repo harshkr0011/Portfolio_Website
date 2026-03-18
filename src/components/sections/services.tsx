@@ -30,7 +30,7 @@ const ServicesSection = () => {
             viewport={{ once: true, amount: 0.3 }}
             variants={cardVariants}
         >
-            <h2 className="font-headline text-3xl md:text-4xl font-bold text-center mb-4">What I Offer</h2>
+            <h2 className="font-headline text-3xl md:text-4xl font-bold text-center text-primary underline decoration-wavy decoration-primary/50 underline-offset-8 mb-6">What I Offer</h2>
             <p className="text-lg text-muted-foreground text-center max-w-3xl mx-auto mb-12">
             From crafting beautiful frontends to building robust backends, I provide a comprehensive suite of services to bring your digital vision to life.
             </p>
