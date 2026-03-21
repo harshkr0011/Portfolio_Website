@@ -5,6 +5,7 @@ import AboutSection from '@/components/sections/about';
 import ServicesSection from '@/components/sections/services';
 import ProjectsSection from '@/components/sections/projects';
 import BlogPreviewSection from '@/components/sections/blog-preview';
+import MissionVisionSection from '@/components/sections/mission-vision';
 import ContactSection from '@/components/sections/contact';
 
 import Education from '@/components/sections/education';
@@ -22,6 +23,7 @@ export default function Home() {
         <ProjectsSection />
         <ServicesSection />
         <BlogPreviewSection />
+        <MissionVisionSection />
         <ContactSection />
       </main>
       <Footer />

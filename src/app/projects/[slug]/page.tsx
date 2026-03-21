@@ -9,7 +9,6 @@ import { ArrowLeft, ExternalLink, Github, Lightbulb, Target } from 'lucide-react
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import Header from '@/components/shared/header';
 import Footer from '@/components/shared/footer';
-import RelatedProjects from '@/components/projects/related-projects';
 
 export async function generateStaticParams() {
   return projects.map((project) => ({
@@ -25,7 +24,8 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
   }
 
   const { title, tags, details, slug } = project;
-  const { longDescription, features, images, dataAiHints, testimonials, challenge, solution } = details;
+  const { longDescription, features, images, testimonials, challenge, solution } = details;
+  const dataAiHints: string[] = (details as any).dataAiHints || [];
 
   return (
     <div className="flex flex-col min-h-screen bg-background">
@@ -154,7 +154,6 @@ export default function ProjectPage({ params }: { params: { slug: string } }) {
             </aside>
           </div>
           
-          <RelatedProjects currentProjectSlug={slug} />
         </div>
       </main>
       <Footer />
