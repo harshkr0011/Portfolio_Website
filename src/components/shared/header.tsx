@@ -9,13 +9,13 @@ import Logo from './logo';
 import { cn } from '@/lib/utils';
 
 export const navItems = [
-  { href: '#about', label: 'About' },
-  { href: '#education', label: 'Education' },
-  { href: '#certifications', label: 'Certifications' },
-  { href: '#projects', label: 'My Work' },
-  { href: '#services', label: 'Services' },
-  { href: '#blog-preview', label: 'Blog' },
-  { href: '#contact', label: 'Contact' },
+  { href: '/#about', label: 'About' },
+  { href: '/#education', label: 'Education' },
+  { href: '/#certifications', label: 'Certifications' },
+  { href: '/#projects', label: 'My Work' },
+  { href: '/#services', label: 'Services' },
+  { href: '/#blog-preview', label: 'Blog' },
+  { href: '/#contact', label: 'Contact' },
   { label: 'Resume', href: '/HK_Resume.pdf', external: true },
 ];
 
