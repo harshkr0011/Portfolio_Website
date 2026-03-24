@@ -203,7 +203,7 @@ export const projects = [
         'Responsive design',
         'Ripple animation on buttons'
       ],
-      images: ['/1.png'],
+      images: ['/6.png'],
       testimonials: []
     }
   },
@@ -227,7 +227,7 @@ export const projects = [
         'PDF export',
         'Dark/light mode'
       ],
-      images: ['/2.png'],
+      images: ['/5.png'],
       testimonials: []
     }
   },
@@ -250,7 +250,7 @@ export const projects = [
         'Market entry assistance',
         'Google Gemini AI integration'
       ],
-      images: ['/3.png'],
+      images: ['/1.png'],
       testimonials: []
     }
   },
@@ -273,7 +273,7 @@ export const projects = [
         'Chatbot support',
         'Booking & payments'
       ],
-      images: ['/4.png'],
+      images: ['/3.png'],
       testimonials: []
     }
   },
@@ -296,7 +296,7 @@ export const projects = [
         'Portfolio management',
         'Financial news'
       ],
-      images: ['/5.png'],
+      images: ['/4.png'],
       testimonials: []
     }
   },
@@ -319,7 +319,7 @@ export const projects = [
         'Interview simulation',
         'Java programming focus'
       ],
-      images: ['/6.png'],
+      images: ['/2.png'],
       testimonials: []
     }
   }
